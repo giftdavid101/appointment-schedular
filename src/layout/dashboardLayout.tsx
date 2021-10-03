@@ -38,6 +38,7 @@ const DashboardLayout: React.FC = ({ children }) => {
 };
 
 const DLStyling = styled.div<{ sidebarShowing: boolean }>`
+  min-height: 100vh;
   position: relative;
   --width: 281px;
   --sm-width: 100px;
@@ -85,7 +86,7 @@ const DLStyling = styled.div<{ sidebarShowing: boolean }>`
       }
 
       &--sidebar {
-        height: calc(100vh - 60px - 68px - 75px);
+        height: calc(100vh - 60px - 68px - 75px - 26px);
         overflow-y: auto;
         display: grid;
         grid-template-columns: minmax(0, 1fr);
@@ -95,6 +96,11 @@ const DLStyling = styled.div<{ sidebarShowing: boolean }>`
       &--footer {
         margin-bottom: 25px;
         margin-top: 10px;
+        padding: ${({ sidebarShowing }) => (sidebarShowing ? '0 40px' : '0')};
+
+        @media screen and (min-width: 1024px) {
+          padding: 0 40px;
+        }
       }
     }
   }
@@ -118,7 +124,7 @@ const DLStyling = styled.div<{ sidebarShowing: boolean }>`
         width: ${({ sidebarShowing }) => (sidebarShowing ? 'auto' : '0px')};
         height: ${({ sidebarShowing }) => (sidebarShowing ? 'auto' : '0px')};
         opacity: ${({ sidebarShowing }) => (sidebarShowing ? '1' : '0')};
-        // display: ${({ sidebarShowing }) => (sidebarShowing ? 'inherit' : 'none')};
+          // display: ${({ sidebarShowing }) => (sidebarShowing ? 'inherit' : 'none')};
       }
     }
 
