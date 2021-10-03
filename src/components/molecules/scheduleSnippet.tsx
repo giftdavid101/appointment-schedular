@@ -21,6 +21,7 @@ const ScheduleSnippet: React.FC<ScheduleSnippetT> = ({ appointmentType, patientN
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
+          width: '100%',
           marginRight: 8,
         }}
       >
