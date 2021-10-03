@@ -56,6 +56,7 @@ const Typography: React.FC<{
   style?: object;
   transform?: transformTextT;
   color?: colorT;
+  truncate?: 1 | 2 | boolean;
 }> = ({ children, className, transform, style, weight, size, color }) => {
   return (
     <TypographyWrapper
