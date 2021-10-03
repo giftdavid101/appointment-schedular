@@ -18,12 +18,16 @@ const RoundedImageStyling = styled.div<RoundedImgT>`
   --default-img: 50px;
 
   > img {
-    border-radius: 25px;
+    border-radius: calc(
+      ${({ size }) => (size === 'small' ? 'var(--small-img) / 2' : 'var(--default-img) / 2')}
+    );
     width: ${({ size }) => (size === 'small' ? 'var(--small-img)' : 'var(--default-img)')};
+    min-width: ${({ size }) => (size === 'small' ? 'var(--small-img)' : 'var(--default-img)')};
     height: ${({ size }) => (size === 'small' ? 'var(--small-img)' : 'var(--default-img)')};
     object-fit: cover;
     overflow: hidden;
   }
+  height: ${({ size }) => (size === 'small' ? 'var(--small-img)' : 'var(--default-img)')};
 `;
 
 export default RoundedImage;

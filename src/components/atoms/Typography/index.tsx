@@ -17,7 +17,7 @@ type fontSizesT = 'xSmall' | 'small' | 'medium' | 'large';
 // | 'mediumSmall'
 // | 'largest'
 // | 'xLargest';
-type colorT =
+export type colorT =
   | 'white'
   | 'darkGreen'
   | 'darkGrey'
@@ -25,9 +25,10 @@ type colorT =
   | 'brown'
   | 'cyan'
   | 'blackTwo'
-  | 'orange';
+  | 'orange'
+  | 'default';
 
-const TypoProps = {
+export const TypoProps = {
   fontSize: {
     xSmall: 10,
     small: 12,
@@ -55,6 +56,7 @@ const Typography: React.FC<{
   style?: object;
   transform?: transformTextT;
   color?: colorT;
+  truncate?: 1 | 2 | boolean;
 }> = ({ children, className, transform, style, weight, size, color }) => {
   return (
     <TypographyWrapper

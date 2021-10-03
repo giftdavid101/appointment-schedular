@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Typography from '../atoms/Typography';
 import {
   AnkCalendarIcon,
+  AnkLoadingIcon,
   AnkPlusIcon,
   AnkSearchIcon,
   AnkSettingsIcon,
@@ -26,6 +27,11 @@ const sidebarMenus = [
       { icon: AnkSettingsIcon, text: 'settings', link: '/settings' },
     ],
   },
+  {
+    heading: 'style guide',
+    children: [{ icon: AnkLoadingIcon, text: 'components', link: '/components' }],
+    hidden: !(process.env.NODE_ENV === 'development'),
+  },
 ];
 
 const Div = (props: any) => <div {...props} />;
@@ -40,44 +46,47 @@ const Sidebar: FC<{ sidebarOpen: boolean; setSidebar: (res: boolean) => void }> 
   return (
     <SidebarStyle sidebarShowing={sidebarOpen}>
       <div className={'SidebarStyle__sidebar'}>
-        {sidebarMenus.map(({ heading, children }, i) => (
-          <div key={i}>
-            <Typography
-              className={'SidebarStyle__sidebar-heading'}
-              weight={400}
-              color={'darkGrey'}
-              size={'small'}
-              transform={'capitalize'}
-              style={{ paddingBottom: '32px' }}
-            >
-              {heading}
-            </Typography>
-            <div>
-              {children.map(({ icon: Icon, text, link }, i) => {
-                const Wrapper: any = link ? NavLink : Div;
-                return (
-                  <Wrapper
-                    key={i}
-                    exact
-                    className={'SidebarStyle__sidebar-navs ds__sidebar__navs'}
-                    onClick={callback({ text, link })}
-                    activeClassName={'sidebar-is-selected'}
-                    to={link}
-                  >
-                    <span>
-                      <Icon />
-                    </span>
-                    <span>
-                      <Typography transform={'capitalize'} weight={700} size={'small'}>
-                        {text}
-                      </Typography>
-                    </span>
-                  </Wrapper>
-                );
-              })}
-            </div>
-          </div>
-        ))}
+        {sidebarMenus.map(
+          ({ heading, children, hidden }, i) =>
+            !hidden && (
+              <div key={i}>
+                <Typography
+                  className={'SidebarStyle__sidebar-heading'}
+                  weight={400}
+                  color={'darkGrey'}
+                  size={'small'}
+                  transform={'capitalize'}
+                  style={{ paddingBottom: '32px' }}
+                >
+                  {heading}
+                </Typography>
+                <div>
+                  {children.map(({ icon: Icon, text, link }, i) => {
+                    const Wrapper: any = link ? NavLink : Div;
+                    return (
+                      <Wrapper
+                        key={i}
+                        exact
+                        className={'SidebarStyle__sidebar-navs ds__sidebar__navs'}
+                        onClick={callback({ text, link })}
+                        activeClassName={'sidebar-is-selected'}
+                        to={link}
+                      >
+                        <span>
+                          <Icon />
+                        </span>
+                        <span>
+                          <Typography transform={'capitalize'} weight={700} size={'small'}>
+                            {text}
+                          </Typography>
+                        </span>
+                      </Wrapper>
+                    );
+                  })}
+                </div>
+              </div>
+            )
+        )}
       </div>
     </SidebarStyle>
   );
@@ -148,6 +157,10 @@ const SidebarStyle = styled.div<any>`
     }
   }
   @media screen and (min-width: 1024px) {
+    .SidebarStyle__sidebar-heading {
+      visibility: visible;
+    }
+
     .SidebarStyle__sidebar {
       padding: 0 40px;
 

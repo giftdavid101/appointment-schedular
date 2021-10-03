@@ -16,3 +16,4 @@ export { ReactComponent as AnkLoadingIcon } from './loading.svg';
 export { ReactComponent as AnkCircleMinusIcon } from './circleMinus.svg';
 export { ReactComponent as AnkClockIcon } from './clock.svg';
 export { ReactComponent as AnkUserIcon } from './user.svg';
+export { ReactComponent as AnkDotIcon } from './dot.svg';
