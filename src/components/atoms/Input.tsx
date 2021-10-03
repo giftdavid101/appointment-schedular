@@ -135,7 +135,7 @@ const InputStyle = styled.div`
   }
 
   input {
-    min-width: 100px;
+    min-width: 50px;
     width: 100%;
     padding: 14px 17px;
     background: #f9f9f9;
