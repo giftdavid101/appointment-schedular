@@ -2,13 +2,14 @@
   "types": [
     { "type": "feat", "section": "Features" },
     { "type": "fix", "section": "Bug Fixes" },
-    { "type": "chore", "hidden": "Chore" },
+    { "type": "chore", "section": "Chore" },
     { "type": "docs", "hidden": true },
-    { "type": "style", "hidden": "Styling" },
+    { "type": "style", "section": "Styling" },
     { "type": "refactor", "hidden": true },
     { "type": "perf", "hidden": true },
     { "type": "test", "hidden": true }
   ],
+  "issueUrlFormat": "https://github.com/giftdavid101/appointment-schedular/issues{{id}}",
   "commitUrlFormat": "https://github.com/giftdavid101/appointment-schedular/commits{{hash}}",
   "compareUrlFormat": "https://github.com/giftdavid101/appointment-schedular/compare/{{previousTag}}...{{currentTag}}"
 }
