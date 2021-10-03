@@ -13,3 +13,19 @@ a {
   font-size: inherit;
   text-decoration: none;
 }
+
+.modal-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.close-modal-btn {
+  padding: 7.5px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--light-grey);
+}
