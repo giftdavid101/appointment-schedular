@@ -13,7 +13,7 @@ const Account: FC<{ sidebarShowing: boolean }> = ({ sidebarShowing }) => {
       <span>
         <div className={'ds__user-account'} onClick={showProfile}>
           <Typography weight={700} size={'medium'}>
-            Acme Clinic, Inc. Lorem ipsum.
+            Acme Clinic, Inc.
           </Typography>
           <Typography weight={700} size={'small'}>
             Marvin Tunji-ola
@@ -31,10 +31,8 @@ const AccountStyling = styled.div<{ sidebarShowing: boolean }>`
   display: flex;
   align-items: center;
   justify-content: ${({ sidebarShowing }) => (sidebarShowing ? undefined : 'center')};
-  padding: ${({ sidebarShowing }) => (sidebarShowing ? '0 40px' : '0')};
-
-  @media screen and (min-width: 1024px) {
-    padding: 0 40px;
-  }
+  background: white;
+  padding: 13px 10px;
+  border-radius: 10px;
 `;
 export default Account;
