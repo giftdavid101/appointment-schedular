@@ -17,7 +17,7 @@ type fontSizesT = 'xSmall' | 'small' | 'medium' | 'large';
 // | 'mediumSmall'
 // | 'largest'
 // | 'xLargest';
-type colorT =
+export type colorT =
   | 'white'
   | 'darkGreen'
   | 'darkGrey'
@@ -25,9 +25,10 @@ type colorT =
   | 'brown'
   | 'cyan'
   | 'blackTwo'
-  | 'orange';
+  | 'orange'
+  | 'default';
 
-const TypoProps = {
+export const TypoProps = {
   fontSize: {
     xSmall: 10,
     small: 12,
