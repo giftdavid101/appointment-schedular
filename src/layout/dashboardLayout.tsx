@@ -45,6 +45,7 @@ const DLStyling = styled.div<{ sidebarShowing: boolean }>`
 
   .ds__sidebar {
     &-overlay {
+      z-index: 10;
       position: absolute;
       background: #00000045;
       top: 0;
@@ -57,6 +58,7 @@ const DLStyling = styled.div<{ sidebarShowing: boolean }>`
     }
 
     &-content {
+      z-index: 10;
       overflow: hidden;
       display: flex;
       flex-direction: column;
